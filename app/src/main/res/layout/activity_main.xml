@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/eyeu_bg"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textColor="@color/eyeu_text_primary"
+                android:textSize="34sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="24dp"
+                android:text="@string/tagline"
+                android:textColor="@color/eyeu_text_secondary"
+                android:textSize="14sp" />
+
+            <!-- Step 1: overlay permission -->
+            <LinearLayout style="@style/EyeU.Card">
+                <TextView style="@style/EyeU.CardTitle" android:text="@string/onboard_step_overlay_title" />
+                <TextView style="@style/EyeU.CardDesc" android:text="@string/onboard_step_overlay_desc" />
+                <Button android:id="@+id/btnGrantOverlay" style="@style/EyeU.Button" android:text="@string/btn_grant" />
+            </LinearLayout>
+
+            <!-- Step 2: accessibility service -->
+            <LinearLayout style="@style/EyeU.Card">
+                <TextView style="@style/EyeU.CardTitle" android:text="@string/onboard_step_accessibility_title" />
+                <TextView style="@style/EyeU.CardDesc" android:text="@string/onboard_step_accessibility_desc" />
+                <Button android:id="@+id/btnOpenAccessibility" style="@style/EyeU.Button" android:text="@string/btn_open" />
+            </LinearLayout>
+
+            <!-- Step 3: mic permission -->
+            <LinearLayout style="@style/EyeU.Card">
+                <TextView style="@style/EyeU.CardTitle" android:text="@string/onboard_step_mic_title" />
+                <TextView style="@style/EyeU.CardDesc" android:text="@string/onboard_step_mic_desc" />
+                <Button android:id="@+id/btnGrantMic" style="@style/EyeU.Button" android:text="@string/btn_grant" />
+            </LinearLayout>
+
+            <!-- AI backend status (read-only summary; editing happens in Settings, reached from the bottom bar) -->
+            <LinearLayout style="@style/EyeU.Card">
+                <TextView style="@style/EyeU.CardTitle" android:text="AI backend" />
+                <TextView
+                    android:id="@+id/tvBackendSummary"
+                    style="@style/EyeU.CardDesc"
+                    android:layout_marginBottom="0dp"
+                    android:text="Not configured yet — open Settings below" />
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnToggleOverlay"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/eyeu_accent"
+                android:text="@string/btn_start"
+                android:textColor="@color/eyeu_white"
+                android:textStyle="bold"
+                app:cornerRadius="16dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom bar: the only way to reach API-key settings, kept off the home screen itself -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="@color/eyeu_surface"
+        android:elevation="8dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/btnBottomHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="?android:attr/selectableItemBackground">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🏠"
+                android:textSize="18sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:textColor="@color/eyeu_accent_end"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnBottomSettings"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="?android:attr/selectableItemBackground">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⚙️"
+                android:textSize="18sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Settings"
+                android:textColor="@color/eyeu_text_secondary"
+                android:textSize="11sp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

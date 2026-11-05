@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="eyeu_bg">#0E0F13</color>
+    <color name="eyeu_surface">#1A1C22</color>
+    <color name="eyeu_surface_alt">#22252D</color>
+    <color name="eyeu_accent_start">#7C4DFF</color>
+    <color name="eyeu_accent_end">#00E5C7</color>
+    <color name="eyeu_accent">#7C4DFF</color>
+    <color name="eyeu_text_primary">#F5F6FA</color>
+    <color name="eyeu_text_secondary">#9AA0AC</color>
+    <color name="eyeu_danger">#FF5470</color>
+    <color name="eyeu_success">#33E6A0</color>
+    <color name="eyeu_listening">#FF5470</color>
+    <color name="eyeu_white">#FFFFFF</color>
+    <color name="eyeu_black_alpha_60">#99000000</color>
+</resources>

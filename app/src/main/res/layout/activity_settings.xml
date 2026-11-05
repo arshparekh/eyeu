@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/eyeu_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="4dp"
+        android:paddingEnd="20dp">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_collapse"
+            android:contentDescription="Back"
+            android:scaleType="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:text="AI Settings"
+            android:textColor="@color/eyeu_text_primary"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="Choose which vision-capable model EyeU uses to read your screen and decide what to do. Nothing here is visible from the home screen."
+                android:textColor="@color/eyeu_text_secondary"
+                android:textSize="13sp" />
+
+            <RadioGroup
+                android:id="@+id/radioBackend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/radioGroq"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Groq (cloud, fast)"
+                    android:textColor="@color/eyeu_text_primary" />
+
+                <LinearLayout style="@style/EyeU.Card" android:layout_marginTop="8dp">
+                    <EditText
+                        android:id="@+id/etGroqKey"
+                        style="@style/EyeU.Input"
+                        android:layout_marginTop="0dp"
+                        android:hint="@string/settings_groq_key_hint"
+                        android:inputType="textPassword" />
+                    <EditText
+                        android:id="@+id/etGroqModel"
+                        style="@style/EyeU.Input"
+                        android:hint="@string/settings_groq_model_hint"
+                        android:inputType="text" />
+                    <TextView style="@style/EyeU.CardDesc" android:layout_marginTop="6dp"
+                        android:text="Get a key at console.groq.com. Model must be a vision-capable one — check console.groq.com/docs/vision for the current list." />
+                </LinearLayout>
+
+                <RadioButton
+                    android:id="@+id/radioGemini"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:text="Gemini (cloud)"
+                    android:textColor="@color/eyeu_text_primary" />
+
+                <LinearLayout style="@style/EyeU.Card" android:layout_marginTop="8dp">
+                    <EditText
+                        android:id="@+id/etGeminiKey"
+                        style="@style/EyeU.Input"
+                        android:layout_marginTop="0dp"
+                        android:hint="@string/settings_gemini_key_hint"
+                        android:inputType="textPassword" />
+                    <EditText
+                        android:id="@+id/etGeminiModel"
+                        style="@style/EyeU.Input"
+                        android:hint="@string/settings_gemini_model_hint"
+                        android:inputType="text" />
+                    <TextView style="@style/EyeU.CardDesc" android:layout_marginTop="6dp"
+                        android:text="Get a key at aistudio.google.com/apikey. A flash-class model is a good balance of speed and cost." />
+                </LinearLayout>
+
+                <RadioButton
+                    android:id="@+id/radioOllama"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:text="Ollama (local / self-hosted)"
+                    android:textColor="@color/eyeu_text_primary" />
+
+                <LinearLayout style="@style/EyeU.Card" android:layout_marginTop="8dp">
+                    <EditText
+                        android:id="@+id/etOllamaHost"
+                        style="@style/EyeU.Input"
+                        android:layout_marginTop="0dp"
+                        android:hint="@string/settings_ollama_host_hint"
+                        android:inputType="textUri" />
+                    <EditText
+                        android:id="@+id/etOllamaModel"
+                        style="@style/EyeU.Input"
+                        android:hint="@string/settings_ollama_model_hint"
+                        android:inputType="text" />
+                    <TextView style="@style/EyeU.CardDesc" android:layout_marginTop="6dp"
+                        android:text="Use a mid-sized vision model (roughly 7B–11B), e.g. qwen2.5vl:7b or llama3.2-vision:11b. Very small vision models read screenshots poorly; very large ones are too slow for a step-by-step loop." />
+                </LinearLayout>
+            </RadioGroup>
+
+            <CheckBox
+                android:id="@+id/cbVoiceFeedback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:textColor="@color/eyeu_text_primary"
+                android:text="@string/settings_voice_feedback" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="@string/settings_offline_desc"
+                android:textColor="@color/eyeu_text_secondary"
+                android:textSize="12sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSaveSettings"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="18dp"
+                android:backgroundTint="@color/eyeu_accent"
+                android:text="@string/btn_save"
+                android:textColor="@color/eyeu_white"
+                android:textStyle="bold"
+                app:cornerRadius="14dp" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.EyeU" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/eyeu_accent</item>
+        <item name="colorSecondary">@color/eyeu_accent_end</item>
+        <item name="android:windowBackground">@color/eyeu_bg</item>
+        <item name="android:statusBarColor">@color/eyeu_bg</item>
+        <item name="android:navigationBarColor">@color/eyeu_bg</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+    </style>
+
+    <style name="Theme.EyeU.Overlay" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+</resources>

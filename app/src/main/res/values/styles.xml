@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="EyeU" />
+
+    <style name="EyeU.Card">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@drawable/bg_settings_card</item>
+        <item name="android:padding">18dp</item>
+        <item name="android:layout_marginBottom">14dp</item>
+    </style>
+
+    <style name="EyeU.CardTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/eyeu_text_primary</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="EyeU.CardDesc">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:layout_marginBottom">12dp</item>
+        <item name="android:textColor">@color/eyeu_text_secondary</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="EyeU.Button" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">6dp</item>
+        <item name="android:textColor">@color/eyeu_accent_end</item>
+        <item name="strokeColor">@color/eyeu_accent_end</item>
+    </style>
+
+    <style name="EyeU.Input">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:background">@drawable/bg_input_field</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:textColor">@color/eyeu_text_primary</item>
+        <item name="android:textColorHint">@color/eyeu_text_secondary</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+</resources>
